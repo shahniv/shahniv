@@ -1,10 +1,9 @@
 
 from flask import Flask, request, jsonify, make_response
-from flask_sqlalchemy import SQLAlchemy
 from os import environ
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE'] = environ.get('DB_URL')
+app.config['ROLL_NUMBER_LIST'] = environ.get('DB_URL')
 db = SQLAlchemy(app)
 
 class User(db.Model):
